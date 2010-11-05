@@ -8,7 +8,7 @@
  * @see  http://kohanaframework.org/guide/using.configuration
  * @see  http://php.net/timezones
  */
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('America/New_York');
 
 /**
  * Set the default locale.
@@ -59,7 +59,8 @@ if (isset($_ENV['KOHANA_ENV']))
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/',
+	'base_url'   => '/hmxsongs/',
+	'index_file' => FALSE,
 ));
 
 /**
@@ -94,7 +95,7 @@ Kohana::modules(array(
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'welcome',
+		'controller' => 'getsongs',
 		'action'     => 'index',
 	));
 
