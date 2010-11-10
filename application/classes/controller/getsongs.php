@@ -8,7 +8,7 @@ Class Controller_getsongs extends Controller
 
         //make sure they passed in a callback
         if (!isset($_REQUEST['callback'])) {
-          $view->set('callback', 'HMXSongsCallbackErrorHandler');
+          $view->set('callback', 'HMXSongs.callbackErrorHandler');
           $view->set('jsondata', Array('error'=>'No Callback Specified'));
         }
         //if they did, we continue
