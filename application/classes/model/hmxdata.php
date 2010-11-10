@@ -7,7 +7,7 @@ class Model_HMXData extends Model {
   public function getAllSongs($recache = false) {
     if ($recache || !self::cacheExists()) {
       //get the raw JSON
-      $url = 'http://rockband.com/services.php/music/all-songs.json';
+      $url = 'http://www.rockband.com/services.php/music/all-songs.json';
       $curl_handle=curl_init();
       curl_setopt($curl_handle,CURLOPT_URL,$url);
       curl_setopt($curl_handle,CURLOPT_CONNECTTIMEOUT,2);
@@ -15,7 +15,7 @@ class Model_HMXData extends Model {
       curl_setopt($curl_handle,CURLOPT_ENCODING , "gzip");
       $result = curl_exec($curl_handle);
       curl_close($curl_handle);
-    
+
       //decode it
       
       //store the data
